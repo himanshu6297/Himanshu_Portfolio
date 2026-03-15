@@ -1,10 +1,10 @@
 export const skillsData = {
-  frontend: ['HTML5', 'CSS3', 'JavaScript', 'React.js'],
-  backend: ['Node.js', 'Express.js', 'MongoDB', 'REST APIs'],
-  mobile: ['Java', 'Android Studio', 'Android SDK', 'Fragments'],
-  devops: ['Docker', 'Kubernetes', 'Jenkins', 'CI/CD Pipelines'],
-  cloud: ['AWS VPC', 'AWS EC2', 'AWS EKS', 'AWS ALB', 'AWS CloudWatch'],
-  tools: ['Git', 'GitHub', 'MongoDB Atlas', 'SonarQube', 'Trivy', 'Linux'],
+  frontend: ['HTML5', 'CSS3', 'JavaScript', 'React.js', 'XML Layout Design'],
+  backend: ['Node.js', 'Express.js', 'MongoDB', 'MongoDB Atlas', 'NoSQL', 'REST APIs'],
+  mobile: ['Java', 'Android Studio', 'Android SDK', 'Android Fragments', 'Activity Lifecycle', 'SQLite'],
+  devops: ['Docker', 'Kubernetes', 'Jenkins', 'CI/CD Pipelines', 'SonarQube', 'Trivy'],
+  cloud: ['AWS VPC', 'AWS EC2', 'AWS EKS', 'AWS ALB', 'AWS CloudWatch', 'Cloud Architecture'],
+  tools: ['Git', 'GitHub', 'SonarQube', 'Trivy', 'Android Studio', 'Linux', 'REST API Design'],
 };
 
 export const skillCategories = [

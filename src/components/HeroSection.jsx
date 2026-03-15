@@ -5,9 +5,16 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 flex items-center justify-center pt-20 transition-colors duration-300"
+      className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 flex items-center justify-center pt-20 transition-colors duration-300 relative overflow-hidden"
     >
-      <div className="section-container">
+      {/* Animated background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-floating"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-secondary-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-floating" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-floating" style={{ animationDelay: '4s' }}></div>
+      </div>
+
+      <div className="section-container relative z-10">
         <div className="max-w-3xl animate-fade-in">
           <div className="mb-6 inline-block px-4 py-2 bg-primary-100 dark:bg-primary-900 rounded-full">
             <span className="text-primary-600 dark:text-primary-300 font-semibold text-sm">Welcome to my portfolio</span>

@@ -1,4 +1,5 @@
 import { Code, Zap, Target } from 'lucide-react';
+import AnimatedCounter from '../components/AnimatedCounter';
 
 export default function AboutSection() {
   const highlights = [
@@ -36,18 +37,9 @@ export default function AboutSection() {
               When I'm not coding, I'm exploring new technologies, contributing to open source, and sharing knowledge with the developer community.
             </p>
             <div className="flex gap-4">
-              <div className="flex flex-col">
-                <span className="text-3xl font-bold text-primary-600">2+</span>
-                <span className="text-gray-600 dark:text-gray-400">Years Experience</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-3xl font-bold text-primary-600">2</span>
-                <span className="text-gray-600 dark:text-gray-400">Major Projects</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-3xl font-bold text-primary-600">20+</span>
-                <span className="text-gray-600 dark:text-gray-400">Technologies</span>
-              </div>
+              <AnimatedCounter end={2} label="Years Experience" />
+              <AnimatedCounter end={2} label="Major Projects" />
+              <AnimatedCounter end={20} label="Technologies" />
             </div>
           </div>
 
@@ -56,8 +48,9 @@ export default function AboutSection() {
             {highlights.map((item, idx) => (
               <div
                 key={idx}
-                className="p-6 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-700 dark:to-gray-800 rounded-xl border-2 border-blue-100 dark:border-gray-600 hover:border-primary-400 hover:shadow-lg transition-all duration-300 animate-slide-up"
-                style={{ animationDelay: `${idx * 0.1}s` }}
+                data-aos="flip-left"
+                data-aos-delay={idx * 100}
+                className="p-6 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-700 dark:to-gray-800 rounded-xl border-2 border-blue-100 dark:border-gray-600 hover:border-primary-400 hover:shadow-lg transition-all duration-300 hover-lift"
               >
                 <div className="flex items-start gap-4">
                   <div className="text-primary-600 flex-shrink-0">{item.icon}</div>

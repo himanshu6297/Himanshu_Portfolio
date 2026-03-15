@@ -2,7 +2,7 @@ import { ExternalLink, Github } from 'lucide-react';
 
 export default function ProjectCard({ project }) {
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group hover:-translate-y-2">
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group hover-lift">
       {/* Project Header */}
       <div className="h-48 bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center">
         <span className="text-6xl">{project.image}</span>

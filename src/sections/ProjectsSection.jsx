@@ -14,7 +14,7 @@ export default function ProjectsSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project, idx) => (
-            <div key={project.id} className="animate-slide-up" style={{ animationDelay: `${idx * 0.2}s` }}>
+            <div key={project.id} data-aos="fade-up" data-aos-delay={idx * 100}>
               <ProjectCard project={project} />
             </div>
           ))}

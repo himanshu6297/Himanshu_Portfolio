@@ -16,7 +16,7 @@ export default function ExperienceSection() {
         'Configured AWS infrastructure (VPC, EC2, EKS, ALB)',
         'Set up CloudWatch monitoring and alerting'
       ],
-      technologies: ['Node.js', 'Kubernetes', 'Docker', 'AWS', 'Jenkins', 'MongoDB'],
+      technologies: ['Node.js', 'Express.js', 'MongoDB Atlas', 'Docker', 'Kubernetes', 'AWS EKS', 'AWS EC2', 'AWS VPC', 'AWS ALB', 'AWS CloudWatch', 'Jenkins', 'SonarQube', 'Trivy', 'GitHub', 'HTML5', 'CSS3', 'JavaScript', 'REST APIs', 'Git'],
       color: 'from-blue-500 to-cyan-500'
     },
     {
@@ -33,7 +33,7 @@ export default function ExperienceSection() {
         'Integrated REST API concepts for backend communication',
         'Mastered Android lifecycle and state management'
       ],
-      technologies: ['Java', 'Android Studio', 'XML Layouts', 'REST APIs', 'SQLite'],
+      technologies: ['Java', 'Android Studio', 'Android SDK', 'XML Layout Design', 'REST APIs', 'SQLite', 'Android Fragments', 'Activity Lifecycle', 'Git'],
       color: 'from-green-500 to-emerald-500'
     }
   ];
@@ -52,8 +52,9 @@ export default function ExperienceSection() {
           {experiences.map((exp, idx) => (
             <div
               key={idx}
-              className="group relative bg-white dark:bg-gray-700 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden animate-slide-up"
-              style={{ animationDelay: `${idx * 0.2}s` }}
+              data-aos="fade-right"
+              data-aos-delay={idx * 100}
+              className="group relative bg-white dark:bg-gray-700 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden hover-lift"
             >
               {/* Timeline Indicator */}
               <div className={`absolute left-0 top-0 w-1 h-full bg-gradient-to-b ${exp.color}`}></div>

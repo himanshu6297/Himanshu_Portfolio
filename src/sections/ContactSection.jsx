@@ -29,8 +29,8 @@ export default function ContactSection() {
     {
       icon: <Mail size={24} />,
       label: 'Email',
-      value: 'your.email@example.com',
-      link: 'mailto:your.email@example.com'
+      value: 'himanshupatel4679@gmail.com',
+      link: 'mailto:himanshupatel4679@gmail.com'
     },
     {
       icon: <Linkedin size={24} />,
@@ -47,7 +47,7 @@ export default function ContactSection() {
     {
       icon: <MapPin size={24} />,
       label: 'Location',
-      value: 'City, Country',
+      value: 'Saskatoon, Canada',
       link: '#'
     }
   ];
@@ -64,7 +64,7 @@ export default function ContactSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Contact Info */}
-          <div className="space-y-8 animate-slide-up">
+          <div className="space-y-8 animate-slide-up" data-aos="fade-left">
             <h3 className="text-3xl font-bold mb-8">Get in Touch</h3>
             
             <div className="space-y-4">
@@ -74,7 +74,9 @@ export default function ContactSection() {
                   href={info.link}
                   target={info.link.startsWith('http') ? '_blank' : '_self'}
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 bg-gray-800 rounded-lg hover:bg-primary-600 transition-all duration-300 group"
+                  data-aos="slide-up"
+                  data-aos-delay={idx * 100}
+                  className="flex items-center gap-4 p-4 bg-gray-800 rounded-lg hover:bg-primary-600 transition-all duration-300 group hover-lift"
                 >
                   <div className="text-primary-400 group-hover:text-white">{info.icon}</div>
                   <div>
@@ -112,7 +114,7 @@ export default function ContactSection() {
           </div>
 
           {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="bg-gray-800 p-8 rounded-xl animate-slide-up" style={{ animationDelay: '0.2s' }}>
+          <form onSubmit={handleSubmit} data-aos="fade-right" className="bg-gray-800 p-8 rounded-xl animate-slide-up" style={{ animationDelay: '0.2s' }}>
             <h3 className="text-3xl font-bold mb-8">Send a Message</h3>
 
             <div className="space-y-6">

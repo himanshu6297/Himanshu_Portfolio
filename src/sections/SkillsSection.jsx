@@ -15,8 +15,9 @@ export default function SkillsSection() {
           {skillCategories.map((category, idx) => (
             <div
               key={category.category}
-              className="group p-6 rounded-xl bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-700 hover:border-primary-300 hover:shadow-lg transition-all duration-300 animate-slide-up"
-              style={{ animationDelay: `${idx * 0.1}s` }}
+              data-aos="zoom-in"
+              data-aos-delay={idx * 100}
+              className="group p-6 rounded-xl bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-700 hover:border-primary-300 hover:shadow-lg transition-all duration-300 hover-lift"
             >
               <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${category.color} mb-4 flex items-center justify-center group-hover:scale-110 transition-transform`}>
                 <span className="text-2xl">✨</span>
