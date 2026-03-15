@@ -4,7 +4,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer id="contact" className="bg-gray-900 text-gray-300 section">
+    <footer className="bg-gray-900 dark:bg-black text-gray-300 section transition-colors duration-300">
       <div className="section-container">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* About Column */}

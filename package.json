@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://github.com/himanshu6297/Himanshu_Portfolio.git",
+  "homepage": "https://himanshu6297.github.io/Himanshu_Portfolio",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

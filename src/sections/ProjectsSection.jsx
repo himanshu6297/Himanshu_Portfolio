@@ -3,11 +3,11 @@ import { projects } from '../data/projects';
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="section bg-gray-50">
+    <section id="projects" className="section bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
       <div className="section-container">
         <div className="mb-16 text-center animate-fade-in">
-          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">Featured Projects</h2>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">Featured Projects</h2>
+          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
             Showcase of my most significant work spanning full-stack development, cloud architecture, and mobile applications
           </p>
         </div>
