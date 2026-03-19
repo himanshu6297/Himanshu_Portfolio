@@ -22,11 +22,11 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-bold text-white mb-4">Get in Touch</h3>
             <div className="space-y-3">
-              <a href="mailto:your.email@example.com" className="flex items-center gap-3 hover:text-primary-400 transition-colors">
-                <Mail size={20} /> your.email@example.com
+              <a href="mailto:himanshupatel4679@gmail.com" className="flex items-center gap-3 hover:text-primary-400 transition-colors">
+                <Mail size={20} /> himanshupatel4679@gmail.com
               </a>
               <div className="flex items-center gap-3 text-gray-400">
-                <MapPin size={20} /> Location, Country
+                <MapPin size={20} /> Saskatoon, Canada
               </div>
             </div>
           </div>
@@ -52,7 +52,7 @@ export default function Footer() {
                 <Linkedin size={20} />
               </a>
               <a
-                href="mailto:your.email@example.com"
+                href="mailto:himanshupatel4679@gmail.com"
                 className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
               >
                 <Mail size={20} />

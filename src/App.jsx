@@ -3,8 +3,7 @@ import useScrollAnimations from './hooks/useScrollAnimations';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import AboutSection from './sections/AboutSection';
-import ProjectsSection from './sections/ProjectsSection';
-import ExperienceSection from './sections/ExperienceSection';
+import ProfessionalExperienceSection from './sections/ProfessionalExperienceSection';
 import SkillsSection from './sections/SkillsSection';
 import ContactSection from './sections/ContactSection';
 import Footer from './components/Footer';
@@ -34,8 +33,7 @@ export default function App() {
       <Navbar isDark={isDark} setIsDark={setIsDark} />
       <HeroSection />
       <AboutSection />
-      <ExperienceSection />
-      <ProjectsSection />
+      <ProfessionalExperienceSection />
       <SkillsSection />
       <ContactSection />
       <Footer />
