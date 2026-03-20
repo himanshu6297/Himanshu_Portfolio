@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import AboutSection from './sections/AboutSection';
 import ProfessionalExperienceSection from './sections/ProfessionalExperienceSection';
+import ProjectsSection from './sections/ProjectsSection';
 import SkillsSection from './sections/SkillsSection';
 import ContactSection from './sections/ContactSection';
 import Footer from './components/Footer';
@@ -34,6 +35,7 @@ export default function App() {
       <HeroSection />
       <AboutSection />
       <ProfessionalExperienceSection />
+      <ProjectsSection isDark={isDark} />
       <SkillsSection />
       <ContactSection />
       <Footer />

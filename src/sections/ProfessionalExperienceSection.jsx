@@ -1,174 +1,256 @@
-import { Briefcase, Calendar, MapPin, Github } from 'lucide-react';
-import { projects } from '../data/projects';
-
 export default function ProfessionalExperienceSection() {
-  // Combine internship experience with projects
   const experiences = [
     {
       id: 1,
       title: 'YelpCamp',
       subtitle: 'Cloud Native Full-Stack Web Application',
-      type: 'Personal Capstone Project',
-      duration: 'Jan 2025 - Apr 2025',
-      location: 'Full-time Development',
-      description: 'A production-grade, cloud-native full-stack web application designed to simulate real-world deployment practices.',
-      highlights: [
-        'Designed and implemented RESTful APIs for 15+ endpoints using Node.js and Express.js',
-        'Built containerized microservices with Docker and Kubernetes on AWS EKS',
-        'Set up automated CI/CD pipeline with Jenkins, SonarQube, and Trivy security scanning',
-        'Configured AWS infrastructure (VPC, EC2, EKS, ALB, CloudWatch)',
-        'Implemented zero-downtime deployments with rolling updates',
-        'Enabled auto-scaling capabilities (2-10 replicas) on Kubernetes cluster'
-      ],
-      technologies: [
-        'HTML5', 'CSS3', 'JavaScript', 'Node.js', 'Express.js', 'MongoDB Atlas',
-        'Docker', 'Kubernetes', 'AWS VPC', 'AWS EC2', 'AWS EKS', 'AWS ALB',
-        'AWS CloudWatch', 'Jenkins', 'SonarQube', 'Trivy', 'GitHub', 'Git'
-      ],
-      color: 'from-blue-500 to-cyan-500',
-      image: '🏕️'
+      date: 'Jan 2025 – Apr 2025',
+      description: 'A production-grade, cloud-native full-stack web application with microservices, containerization, and CI/CD automation.',
+      icon: '🏗️'
     },
     {
       id: 2,
       title: 'AgriGuard',
-      subtitle: 'AI-Powered Leaf Disease Detection System with Chatbot',
-      type: 'Capstone Project (In Progress)',
-      duration: 'Jan 2026 - Apr 2026',
-      location: 'AI/ML Development',
-      description: 'An intelligent crop disease detection system using deep learning computer vision to analyze leaf images and classify plant diseases.',
-      highlights: [
-        'Developed CNN-based plant disease classifier achieving ≥90% F1-score',
-        'Implemented transfer learning for improved model accuracy with limited data',
-        'Built end-to-end AI pipeline from data preprocessing to model serving',
-        'Designed TensorFlow Lite optimized model for edge deployment on mobile devices',
-        'Integrated FastAPI backend for real-time disease prediction',
-        'Developed conversational chatbot for treatment recommendations'
-      ],
-      technologies: [
-        'Python', 'TensorFlow', 'TensorFlow Lite', 'CNN', 'Transfer Learning',
-        'Computer Vision', 'Image Processing', 'tf.data', 'FastAPI',
-        'TensorFlow Serving', 'Deep Learning', 'PlantVillage Dataset', 'Git', 'Jupyter'
-      ],
-      color: 'from-green-500 to-emerald-500',
-      image: '🌾'
+      subtitle: 'AI-Powered Leaf Disease Detection',
+      date: 'Jan 2026 – Apr 2026',
+      description: 'An intelligent crop disease detection system using deep learning and computer vision to analyze leaf images with 90%+ accuracy.',
+      icon: '🤖'
     },
     {
       id: 3,
-      title: 'Android Mobile Application',
-      subtitle: 'Internship Project - PraxWare Technologies',
-      type: 'Professional Internship',
-      duration: 'June - July 2022',
-      location: 'Ahmedabad, India',
-      description: 'Developed a feature-rich Android application, gaining hands-on experience in mobile architecture and UI design.',
-      highlights: [
-        'Built user authentication system with validation and secure storage',
-        'Implemented fragment-based navigation patterns for modular app structure',
-        'Designed responsive XML layouts for multiple screen sizes',
-        'Created interactive UI components and managed activity lifecycle',
-        'Integrated REST API concepts for backend communication',
-        'Mastered Android lifecycle management and state preservation'
-      ],
-      technologies: [
-        'Java', 'Android Studio', 'Android SDK', 'XML Layout Design',
-        'REST APIs', 'SQLite', 'Android Fragments', 'Activity Lifecycle', 'Git'
-      ],
-      color: 'from-orange-500 to-red-500',
-      image: '📱'
+      title: 'Android Development',
+      subtitle: 'Internship at PraxWare Technologies',
+      date: 'Jun 2022 – Jul 2022',
+      description: 'Developed feature-rich Android applications with hands-on experience in mobile architecture, UI design, and REST API integration.',
+      icon: '📱'
     }
   ];
 
   return (
-    <section id="experience" className="section bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
-      <div className="section-container">
-        <div className="mb-16 text-center animate-fade-in">
+    <section id="experience" className="section bg-white dark:bg-gray-900 py-32 transition-colors duration-300">
+      <div className="section-container max-w-7xl">
+        {/* Header */}
+        <div className="text-center mb-24" data-aos="fade-up">
           <h2 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
-            Professional Experience
+            Experience
           </h2>
-          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-            My journey building scalable applications, from cloud-native full-stack systems to AI-powered solutions and mobile development
+          <p className="text-gray-600 dark:text-gray-400 text-xl">
+            My professional journey and key milestones
           </p>
         </div>
 
-        <div className="space-y-8 max-w-4xl mx-auto">
-          {experiences.map((exp, idx) => (
-            <div
-              key={idx}
-              data-aos="fade-right"
-              data-aos-delay={idx * 100}
-              className="group relative bg-white dark:bg-gray-700 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden hover-lift"
-            >
-              {/* Timeline Indicator */}
-              <div className={`absolute left-0 top-0 w-1 h-full bg-gradient-to-b ${exp.color}`}></div>
+        {/* CSS for pointer arrows */}
+        <style>{`
+          .card-arrow-right::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 8px solid rgba(31, 41, 55, 1);
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+          }
+          .dark .card-arrow-right::after {
+            border-left-color: rgba(31, 41, 55, 1);
+          }
+          .card-arrow-left::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-right: 8px solid rgba(31, 41, 55, 1);
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+          }
+          .dark .card-arrow-left::before {
+            border-right-color: rgba(31, 41, 55, 1);
+          }
+        `}</style>
 
-              <div className="p-8 pl-8">
-                {/* Header */}
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="text-3xl">{exp.image}</span>
-                      <div>
-                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-                          {exp.title}
-                        </h3>
+        {/* Timeline Container */}
+        <div className="relative">
+          {/* Vertical Timeline Line - Thin and Subtle */}
+          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px transform -translate-x-1/2 z-0 bg-gray-300 dark:bg-gray-700"></div>
+
+          {/* Timeline Items - Perfect Alignment */}
+          <div className="space-y-24">
+            {experiences.map((exp, idx) => (
+              <div 
+                key={idx}
+                className="relative"
+                data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
+                data-aos-duration="700"
+              >
+                {/* Desktop Layout - Full Row with Card, Arrow, Node, Date - Compact */}
+                <div className="hidden lg:flex lg:items-center lg:justify-center gap-0" style={{ minHeight: '120px' }}>
+                  {idx % 2 === 0 ? (
+                    <>
+                      {/* Left: Card with Right Arrow */}
+                      <div className="flex-shrink-0 flex items-center" style={{ width: '300px', minHeight: '120px' }}>
+                        <div className="relative bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600 p-6 hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-md transition-all duration-300 card-arrow-right w-full h-full flex flex-col justify-center">
+                          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">
+                            {exp.title}
+                          </h3>
+                          <p className="text-base text-gray-600 dark:text-gray-300 font-medium mb-2">
+                            {exp.subtitle}
+                          </p>
+                          <p className="text-sm text-gray-700 dark:text-gray-400 leading-relaxed line-clamp-2">
+                            {exp.description}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                    <p className="text-primary-600 dark:text-primary-400 font-semibold mb-1">
+
+                      {/* Minimal spacing before center node */}
+                      <div style={{ width: '8px' }}></div>
+
+                      {/* Center: Timeline Node */}
+                      <div className="flex-shrink-0 flex items-center justify-center" style={{ width: 'auto' }}>
+                        <div className="w-24 h-24 rounded-full bg-white dark:bg-gray-900 border-4 border-blue-400 dark:border-blue-300 shadow-md hover:shadow-lg transition-shadow duration-300 flex items-center justify-center relative z-10 flex-shrink-0">
+                          <span className="text-5xl">{exp.icon}</span>
+                        </div>
+                      </div>
+
+                      {/* Minimal spacing after center node */}
+                      <div style={{ width: '8px' }}></div>
+
+                      {/* Right: Date */}
+                      <div className="flex-shrink-0 flex items-center" style={{ width: '120px', minHeight: '120px' }}>
+                        <p className="text-sm font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide whitespace-nowrap">
+                          {exp.date}
+                        </p>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      {/* Left: Date */}
+                      <div className="flex-shrink-0 flex items-center" style={{ width: '120px', minHeight: '120px' }}>
+                        <p className="text-sm font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide whitespace-nowrap">
+                          {exp.date}
+                        </p>
+                      </div>
+
+                      {/* Minimal spacing before center node */}
+                      <div style={{ width: '8px' }}></div>
+
+                      {/* Center: Timeline Node */}
+                      <div className="flex-shrink-0 flex items-center justify-center" style={{ width: 'auto' }}>
+                        <div className="w-24 h-24 rounded-full bg-white dark:bg-gray-900 border-4 border-blue-400 dark:border-blue-300 shadow-md hover:shadow-lg transition-shadow duration-300 flex items-center justify-center relative z-10 flex-shrink-0">
+                          <span className="text-5xl">{exp.icon}</span>
+                        </div>
+                      </div>
+
+                      {/* Minimal spacing after center node */}
+                      <div style={{ width: '8px' }}></div>
+
+                      {/* Right: Card with Left Arrow */}
+                      <div className="flex-shrink-0 flex items-center" style={{ width: '300px', minHeight: '120px' }}>
+                        <div className="relative bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600 p-6 hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-md transition-all duration-300 card-arrow-left w-full h-full flex flex-col justify-center">
+                          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">
+                            {exp.title}
+                          </h3>
+                          <p className="text-base text-gray-600 dark:text-gray-300 font-medium mb-2">
+                            {exp.subtitle}
+                          </p>
+                          <p className="text-sm text-gray-700 dark:text-gray-400 leading-relaxed line-clamp-2">
+                            {exp.description}
+                          </p>
+                        </div>
+                      </div>
+                    </>
+                  )}
+                </div>
+
+                {/* Tablet Layout */}
+                <div className="hidden md:grid lg:hidden grid-cols-2 gap-8 items-center relative">
+                  {/* Vertical Line for Tablet */}
+                  <div className="absolute left-1/2 top-0 bottom-0 w-px transform -translate-x-1/2 z-0 bg-gray-300 dark:bg-gray-700"></div>
+
+                  {idx % 2 === 0 ? (
+                    <>
+                      {/* Left Content */}
+                      <div className="pr-8">
+                        <div className="relative bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600 p-7 hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-md transition-all duration-300">
+                          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                            {exp.title}
+                          </h3>
+                          <p className="text-base text-gray-600 dark:text-gray-300 font-medium mb-3">
+                            {exp.subtitle}
+                          </p>
+                          <p className="text-base text-gray-700 dark:text-gray-400 leading-relaxed">
+                            {exp.description}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Center Node */}
+                      <div className="flex flex-col items-center relative z-10">
+                        <div className="w-20 h-20 rounded-full bg-white dark:bg-gray-900 border-4 border-blue-400 dark:border-blue-300 shadow-md flex items-center justify-center">
+                          <span className="text-4xl">{exp.icon}</span>
+                        </div>
+                        <p className="text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide mt-4 whitespace-nowrap">
+                          {exp.date}
+                        </p>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      {/* Left: Empty or Date */}
+                      <div className="pl-8 text-center">
+                        <p className="text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide whitespace-nowrap">
+                          {exp.date}
+                        </p>
+                      </div>
+
+                      {/* Right Content */}
+                      <div className="relative z-10">
+                        <div className="relative bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600 p-7 hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-md transition-all duration-300">
+                          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                            {exp.title}
+                          </h3>
+                          <p className="text-base text-gray-600 dark:text-gray-300 font-medium mb-3">
+                            {exp.subtitle}
+                          </p>
+                          <p className="text-base text-gray-700 dark:text-gray-400 leading-relaxed">
+                            {exp.description}
+                          </p>
+                        </div>
+                      </div>
+                    </>
+                  )}
+                </div>
+
+                {/* Mobile Layout - Stacked */}
+                <div className="md:hidden flex flex-col items-center gap-6">
+                  {/* Mobile Timeline Node */}
+                  <div className="w-20 h-20 rounded-full bg-white dark:bg-gray-900 border-4 border-blue-400 dark:border-blue-300 shadow-md flex items-center justify-center">
+                    <span className="text-4xl">{exp.icon}</span>
+                  </div>
+
+                  {/* Mobile Content Card */}
+                  <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600 p-7 w-full">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                      {exp.title}
+                    </h3>
+                    <p className="text-base text-gray-600 dark:text-gray-300 font-medium mb-3">
                       {exp.subtitle}
                     </p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{exp.type}</p>
-                  </div>
-                  <div className="mt-4 md:mt-0 flex flex-col items-start md:items-end gap-2">
-                    <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
-                      <Calendar size={16} />
-                      <span className="text-sm">{exp.duration}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
-                      <MapPin size={16} />
-                      <span className="text-sm">{exp.location}</span>
-                    </div>
-                  </div>
-                </div>
-
-                <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  {exp.description}
-                </p>
-
-                {/* Key Achievements */}
-                <div className="mb-6">
-                  <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
-                    <Briefcase size={20} /> Key Achievements
-                  </h4>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {exp.highlights.map((highlight, hidx) => (
-                      <li key={hidx} className="flex items-start gap-3">
-                        <div className="w-2 h-2 rounded-full bg-primary-600 mt-2 flex-shrink-0"></div>
-                        <span className="text-gray-700 dark:text-gray-300 text-sm">
-                          {highlight}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Technologies */}
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-3">
-                    Technologies & Skills
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {exp.technologies.map((tech, tidx) => (
-                      <span
-                        key={tidx}
-                        className="px-3 py-1 bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-gray-600 dark:to-gray-600 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                    <p className="text-base text-gray-700 dark:text-gray-400 leading-relaxed mb-4">
+                      {exp.description}
+                    </p>
+                    <p className="text-sm font-bold text-gray-700 dark:text-gray-200 uppercase tracking-wide">
+                      {exp.date}
+                    </p>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
