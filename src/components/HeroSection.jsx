@@ -51,7 +51,7 @@ export default function HeroSection() {
 
           <div className="flex gap-6 animate-slide-up" style={{ animationDelay: '0.6s' }}>
             <a
-              href="https://github.com"
+              href="https://github.com/himanshu6297"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-700 hover:text-primary-600 transition-colors"
@@ -59,7 +59,7 @@ export default function HeroSection() {
               <Github size={24} />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/himanshu-patel-hp"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-700 hover:text-primary-600 transition-colors"

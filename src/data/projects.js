@@ -1,6 +1,83 @@
 export const projects = [
   {
     id: 1,
+    title: 'AgriGuard',
+    subtitle: 'AI-Powered Leaf Disease Detection System with Chatbot',
+    description: 'An intelligent crop disease detection system using deep learning computer vision to analyze leaf images and classify plant diseases with high accuracy. Integrated with a conversational chatbot providing treatment recommendations and guidance for farmers.',
+    longDescription: `AgriGuard is an end-to-end AI solution designed to help farmers identify plant diseases early using computer vision and deep learning. The system analyzes leaf images, classifies disease conditions, assesses severity, and provides treatment recommendations through an intelligent chatbot interface.
+
+Problem Solved:
+• Traditional disease detection is time-consuming and expert-dependent
+• Farmers in remote areas lack access to agronomic expertise
+• Delayed diagnosis leads to significant crop loss
+
+System Architecture:
+1. Image ingestion from user
+2. Image preprocessing and normalization
+3. CNN model performs disease classification
+4. Backend API processes predictions with FastAPI
+5. Chatbot explains results and suggests treatment
+
+Key Features:
+• Real-time leaf disease classification using CNN
+• Severity assessment (Healthy, Mild, Severe)
+• Transfer learning for improved accuracy
+• TensorFlow Lite for edge deployment
+• Conversational AI chatbot assistance
+• Treatment recommendations engine
+• Comprehensive disease information database
+
+Model Performance:
+• Achieved ≥90% F1-score on PlantVillage dataset
+• High precision to reduce false alarms
+• Optimized recall to minimize missed diagnoses
+• TensorFlow Lite optimization for mobile deployment
+
+Technical Implementation:
+• Convolutional Neural Networks with transfer learning
+• Data pipeline using tf.data for efficient processing
+• FastAPI backend for real-time inference
+• TensorFlow Serving for scalable model serving
+• Integrated chatbot for user guidance`,
+    technologies: [
+      'Python',
+      'LLM',
+      'TensorFlow Lite',
+      'Convolutional Neural Networks (CNN)',
+      'Transfer Learning',
+      'Computer Vision',
+      'Image Processing',
+      'tf.data Pipeline',
+      'FastAPI',
+      'TensorFlow Serving',
+      'Deep Learning',
+      'Model Evaluation',
+      'PlantVillage Dataset',
+      'Data Preprocessing',
+      'REST APIs',
+      'Git',
+      'Jupyter Notebook'
+    ],
+    keyAchievements: [
+      'Developed CNN-based plant disease classifier achieving ≥90% F1-score',
+      'Implemented transfer learning for improved model accuracy with limited data',
+      'Built end-to-end AI pipeline from data preprocessing to model serving',
+      'Prepared and preprocessed PlantVillage dataset with image normalization',
+      'Trained deep learning models with comprehensive evaluation metrics',
+      'Achieved high recall to minimize false negatives (missed disease diagnoses)',
+      'Designed TensorFlow Lite optimized model for edge deployment on mobile devices',
+      'Integrated FastAPI backend for real-time disease prediction',
+      'Developed conversational chatbot for treatment recommendations',
+      'Created disease severity classification system (Healthy/Mild/Severe)',
+      'Built comprehensive model evaluation framework with precision, recall, F1-score'
+    ],
+    link: 'https://github.com/himanshu6297/PlantDiseaseDetection/tree/main',
+    image: '/Himanshu_Portfolio/images/Home%20Page.jpg',
+    duration: 'Jan 2026 - Apr 2026 (Current Capstone Project)',
+    status: 'In Progress'
+  },
+  {
+    id: 2,
     title: 'YelpCamp',
     subtitle: 'Cloud Native Full-Stack Web Application',
     description: 'A comprehensive full-stack web application for discovering, reviewing, and managing campground locations. Built with a 3-tier cloud architecture featuring containerized microservices on AWS EKS, MongoDB Atlas for persistent storage, and an automated CI/CD pipeline using Jenkins.',
@@ -60,91 +137,14 @@ The CI/CD pipeline automates code quality checks, security scans, Docker image b
       'Implemented CloudWatch monitoring with custom alerts and dashboards',
       'Enabled zero-downtime deployments with rolling updates on Kubernetes'
     ],
-    link: 'https://github.com',
-    image: '🏕️',
+    link: 'https://github.com/himanshu6297/YelpCamp',
+    image: '/Himanshu_Portfolio/images/Yelp-camp-home.jpg',
     duration: 'Jan 2025 - Apr 2025 (Capstone Project)',
-  },
-  {
-    id: 2,
-    title: 'AgriGuard',
-    subtitle: 'AI-Powered Leaf Disease Detection System with Chatbot',
-    description: 'An intelligent crop disease detection system using deep learning computer vision to analyze leaf images and classify plant diseases with high accuracy. Integrated with a conversational chatbot providing treatment recommendations and guidance for farmers.',
-    longDescription: `AgriGuard is an end-to-end AI solution designed to help farmers identify plant diseases early using computer vision and deep learning. The system analyzes leaf images, classifies disease conditions, assesses severity, and provides treatment recommendations through an intelligent chatbot interface.
-
-Problem Solved:
-• Traditional disease detection is time-consuming and expert-dependent
-• Farmers in remote areas lack access to agronomic expertise
-• Delayed diagnosis leads to significant crop loss
-
-System Architecture:
-1. Image ingestion from user
-2. Image preprocessing and normalization
-3. CNN model performs disease classification
-4. Backend API processes predictions with FastAPI
-5. Chatbot explains results and suggests treatment
-
-Key Features:
-• Real-time leaf disease classification using CNN
-• Severity assessment (Healthy, Mild, Severe)
-• Transfer learning for improved accuracy
-• TensorFlow Lite for edge deployment
-• Conversational AI chatbot assistance
-• Treatment recommendations engine
-• Comprehensive disease information database
-
-Model Performance:
-• Achieved ≥90% F1-score on PlantVillage dataset
-• High precision to reduce false alarms
-• Optimized recall to minimize missed diagnoses
-• TensorFlow Lite optimization for mobile deployment
-
-Technical Implementation:
-• Convolutional Neural Networks with transfer learning
-• Data pipeline using tf.data for efficient processing
-• FastAPI backend for real-time inference
-• TensorFlow Serving for scalable model serving
-• Integrated chatbot for user guidance`,
-    technologies: [
-      'Python',
-      'TensorFlow',
-      'TensorFlow Lite',
-      'Convolutional Neural Networks (CNN)',
-      'Transfer Learning',
-      'Computer Vision',
-      'Image Processing',
-      'tf.data Pipeline',
-      'FastAPI',
-      'TensorFlow Serving',
-      'Deep Learning',
-      'Model Evaluation',
-      'PlantVillage Dataset',
-      'Data Preprocessing',
-      'REST APIs',
-      'Git',
-      'Jupyter Notebook'
-    ],
-    keyAchievements: [
-      'Developed CNN-based plant disease classifier achieving ≥90% F1-score',
-      'Implemented transfer learning for improved model accuracy with limited data',
-      'Built end-to-end AI pipeline from data preprocessing to model serving',
-      'Prepared and preprocessed PlantVillage dataset with image normalization',
-      'Trained deep learning models with comprehensive evaluation metrics',
-      'Achieved high recall to minimize false negatives (missed disease diagnoses)',
-      'Designed TensorFlow Lite optimized model for edge deployment on mobile devices',
-      'Integrated FastAPI backend for real-time disease prediction',
-      'Developed conversational chatbot for treatment recommendations',
-      'Created disease severity classification system (Healthy/Mild/Severe)',
-      'Built comprehensive model evaluation framework with precision, recall, F1-score'
-    ],
-    link: 'https://github.com',
-    image: '🌾',
-    duration: 'Jan 2026 - Apr 2026 (Current Capstone Project)',
-    status: 'In Progress'
   },
   {
     id: 3,
     title: 'Android Mobile Application',
-    subtitle: 'Internship Project - PraxWare Technologies',
+    subtitle: 'Internship Project',
     description: 'Developed a full-featured Android application during an internship, gaining hands-on experience with mobile app architecture, API integration, and native UI development using Android Studio.',
     longDescription: `During a 3-week internship at PraxWare Technologies, I designed and developed a feature-rich Android application from scratch, implementing user authentication, navigation patterns, and interactive UI components.
 
@@ -201,8 +201,8 @@ Skills Developed:
       'Implemented local data storage using SQLite',
       'Learned Android Activity lifecycle and proper state restoration'
     ],
-    link: 'https://github.com',
-    image: '📱',
+    link: 'https://github.com/himanshu6297/Android-Mobile-Application',
+    image: '/Himanshu_Portfolio/images/Android-app.png',
     company: 'PraxWare Technologies, Ahmedabad',
     internshipDates: 'June 20, 2022 – July 8, 2022',
   }

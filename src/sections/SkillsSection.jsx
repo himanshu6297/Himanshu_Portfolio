@@ -7,7 +7,10 @@ export default function SkillsSection() {
         <div className="mb-16 text-center animate-fade-in">
           <h2 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">Skills & Technologies</h2>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-            A comprehensive toolkit built through professional experience and continuous learning
+            Full-stack & AI engineer building real-world, scalable intelligent systems
+          </p>
+          <p className="text-lg text-blue-600 dark:text-blue-400 mt-6 font-medium">
+            🚀 Built and deployed an AI-powered crop disease detection system with real-time chatbot integration
           </p>
         </div>
 

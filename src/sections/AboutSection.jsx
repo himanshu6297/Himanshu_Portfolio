@@ -6,17 +6,17 @@ export default function AboutSection() {
     {
       icon: <Code size={32} />,
       title: 'Full Stack Developer',
-      description: 'Building scalable web applications with modern frameworks and cloud technologies'
+      description: 'Building scalable, responsive web applications using modern frontend and backend technologies.'
     },
     {
       icon: <Zap size={32} />,
-      title: 'Cloud Architect',
-      description: 'Designing containerized microservices on AWS EKS with Kubernetes orchestration'
+      title: 'AI & Cloud Developer',
+      description: 'Developing AI-powered applications and deploying them on cloud platforms using containerized environments.'
     },
     {
       icon: <Target size={32} />,
-      title: 'DevOps Engineer',
-      description: 'Creating automated CI/CD pipelines with Jenkins, SonarQube, and security scanning'
+      title: 'DevOps & Automation',
+      description: 'Implementing CI/CD pipelines, containerization, and automation to streamline development and deployment.'
     }
   ];
 
@@ -28,17 +28,17 @@ export default function AboutSection() {
           <div className="animate-fade-in">
             <h2 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">About Me</h2>
             <p className="text-xl text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-              I'm a passionate full-stack developer and cloud architect with expertise in building production-grade applications. My journey spans from mobile app development to enterprise cloud solutions.
+              I'm a full-stack developer focused on building intelligent, real-world applications by combining software development, cloud technologies, and artificial intelligence. I specialize in developing scalable systems across frontend, backend, and cloud environments.
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-              I combine software engineering best practices with DevOps principles to deliver scalable, secure, and maintainable systems. Each project is an opportunity to solve real-world problems and demonstrate technical excellence.
+             I have hands-on experience with React.js, Node.js, Docker, Kubernetes, and AWS, and I enjoy building production-ready applications with clean architecture and efficient deployment workflows. Recently, I developed an AI-powered plant disease detection system with an integrated chatbot, handling everything from model integration to full-stack deployment.
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-              When I'm not coding, I'm exploring new technologies, contributing to open source, and sharing knowledge with the developer community.
+              I'm particularly interested in AI-driven solutions and system design, and I continuously work on improving my skills in cloud computing, DevOps, and modern application architecture.
             </p>
             <div className="flex gap-4">
-              <AnimatedCounter end={2} label="Years Experience" />
-              <AnimatedCounter end={2} label="Major Projects" />
+              <AnimatedCounter end={1} label="Years Experience" />
+              <AnimatedCounter end={3} label="Major Projects" />
               <AnimatedCounter end={20} label="Technologies" />
             </div>
           </div>

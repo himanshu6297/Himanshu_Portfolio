@@ -10,7 +10,7 @@ export default function Footer() {
           {/* About Column */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-lg"></div>
+              <img src="/Himanshu_Portfolio/icon.png" alt="Himanshu Patel" className="w-8 h-8 rounded-lg object-cover" />
               <h3 className="text-lg font-bold text-white">Himanshu Patel</h3>
             </div>
             <p className="text-gray-400 leading-relaxed">
@@ -36,7 +36,7 @@ export default function Footer() {
             <h3 className="text-lg font-bold text-white mb-4">Follow Me</h3>
             <div className="flex gap-4">
               <a
-                href="https://github.com"
+                href="https://github.com/himanshu6297"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
@@ -44,7 +44,7 @@ export default function Footer() {
                 <Github size={20} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/himanshu-patel-hp"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
@@ -65,6 +65,9 @@ export default function Footer() {
         <div className="border-t border-gray-800 pt-8">
           <p className="text-center text-gray-400">
             © {year} Himanshu Patel. All rights reserved.
+          </p>
+          <p className="text-center text-gray-500 text-sm mt-2">
+            About this website: Built with Vite & React, TypeScript, Tailwind CSS, Framer Motion, AOS & Docker.
           </p>
         </div>
       </div>

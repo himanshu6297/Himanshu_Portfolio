@@ -1,57 +1,27 @@
 import { ExternalLink, Github } from 'lucide-react';
+import { projects } from '../data/projects';
 
 export default function ProjectsSection({ isDark }) {
-  const projects = [
-    {
-      title: 'YelpCamp',
-      description: 'Full-stack camping review platform with user authentication, CRUD operations, and interactive maps.',
-      image: '🏕️',
-      technologies: ['Node.js', 'Express', 'MongoDB', 'Bootstrap'],
-      links: {
-        github: 'https://github.com',
-        live: 'https://yelpcamp.com'
-      }
-    },
-    {
-      title: 'AgriGuard',
-      description: 'AI-powered crop disease detection system using deep learning to identify plant diseases with 90%+ accuracy.',
-      image: '🌾',
-      technologies: ['Python', 'TensorFlow', 'OpenCV', 'Flask'],
-      links: {
-        github: 'https://github.com',
-        live: 'https://agriguard.com'
-      }
-    },
-    {
-      title: 'PraxWare Android App',
-      description: 'Feature-rich Android mobile application with real-time data synchronization and offline capabilities.',
-      image: '📱',
-      technologies: ['Java', 'Android SDK', 'Firebase', 'SQLite'],
-      links: {
-        github: 'https://github.com'
-      }
-    },
-    {
-      title: 'Weather Dashboard',
-      description: 'Interactive weather application with real-time forecasts, location-based services, and data visualization.',
-      image: '🌤️',
-      technologies: ['React', 'API Integration', 'Tailwind CSS', 'JavaScript'],
-      links: {
-        github: 'https://github.com',
-        live: 'https://weather-dashboard.com'
-      }
-    }
-  ];
-
   return (
-    <section id="projects" className="section bg-white dark:bg-gray-900 py-32 transition-colors duration-300">
-      <div className="section-container max-w-6xl">
+    <section
+      id="projects"
+      className={`relative min-h-screen overflow-hidden py-20 md:py-32 transition-colors duration-300 ${
+        isDark 
+          ? 'bg-[radial-gradient(circle_at_top,_rgba(30,64,175,0.25),_transparent_30%),linear-gradient(180deg,_#0a0f1f_0%,_#050b18_60%,_#02060f_100%)]'
+          : 'bg-gradient-to-br from-gray-50 via-blue-50 to-white'
+      }`}
+    >
+      {/* OVERLAY */}
+      <div className={`absolute inset-0 ${isDark ? 'bg-black/40' : 'bg-white/20'}`}></div>
+
+      {/* ALL CONTENT MUST BE INSIDE THIS */}
+      <div className="relative z-10 section-container max-w-6xl">
         {/* Header */}
-        <div className="text-center mb-24" data-aos="fade-up">
-          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
+        <div className="text-center mb-16 md:mb-24 px-4" data-aos="fade-up">
+          <h2 className={`text-4xl sm:text-5xl md:text-6xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
             Projects
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-xl">
+          <p className={`text-lg md:text-xl ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
             Featured projects and applications I've built
           </p>
         </div>
@@ -59,254 +29,186 @@ export default function ProjectsSection({ isDark }) {
         {/* CSS for clean card design */}
         <style>{`
           .project-card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            background: transparent;
+            color: ${isDark ? 'white' : '#1f2937'};
+            border-radius: 0;
+            overflow: visible;
+            box-shadow: none;
             transition: all 0.3s ease;
+            position: relative;
+            min-height: 300px;
           }
-          
-          .project-card.dark {
-            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-          }
-          
+
           .project-card:hover {
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-            transform: translateY(-4px);
+            box-shadow: none;
+            transform: none;
           }
-          
-          /* Clean browser window - NO 3D EFFECTS */
-          .browser-frame {
-            display: flex;
-            flex-direction: column;
-            background: #f3f3f3;
-            border-radius: 8px;
+
+          .project-card-grid {
+            position: relative;
+            padding-right: 0;
+          }
+
+          .project-text-content {
+            position: relative;
+            z-index: 10;
+          }
+
+          /* Odd cards (1st, 3rd, 5th...) - text left, half width */
+          .project-card:nth-child(odd) .project-text-content {
+            width: 100%;
+            margin-left: 0;
+            padding-right: 0;
+          }
+
+          /* Even cards (2nd, 4th, 6th...) - text right, half width */
+          .project-card:nth-child(even) .project-text-content {
+            width: 100%;
+            margin-left: auto;
+            text-align: right;
+            padding-left: 0;
+          }
+
+          @media (min-width: 1024px) {
+            .project-card:nth-child(odd) .project-text-content {
+              width: 50%;
+            }
+            .project-card:nth-child(even) .project-text-content {
+              width: 50%;
+            }
+          }
+
+          .project-image-container {
+            position: absolute;
             overflow: hidden;
-            border: 1px solid #e0e0e0;
+            transition: transform 0.5s ease, filter 0.5s ease;
+            transform: scale(1) rotate(0deg);
+            filter: brightness(1);
+            bottom: 0;
+          }
+
+          /* Even cards (1st, 3rd, 5th...) - bottom right */
+          .project-card:nth-child(odd) .project-image-container {
+            right: 0;
+          }
+
+          /* Odd cards (2nd, 4th, 6th...) - bottom left */
+          .project-card:nth-child(even) .project-image-container {
+            left: 0;
+          }
+
+          .project-image-wrapper {
+            width: 100%;
             height: 100%;
+            border-radius: 0;
+            border: none;
+            box-shadow: none;
+            overflow: hidden;
           }
-          
-          .browser-frame.dark {
-            background: #1a1a1a;
-            border-color: #333;
+
+          .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
           }
-          
-          /* Browser header with traffic lights */
-          .browser-header {
-            background: linear-gradient(to bottom, #f5f5f5, #ececec);
-            padding: 12px 16px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            border-bottom: 1px solid #d4d4d4;
+
+          .project-card:hover .project-image-container {
+            transform: scale(1.05) rotate(-3deg);
+            filter: brightness(1.1);
           }
-          
-          .browser-header.dark {
-            background: linear-gradient(to bottom, #262626, #1f1f1f);
-            border-bottom-color: #333;
+
+          /* Even cards (YelpCamp) - tilt right on hover */
+          .project-card:nth-child(even):hover .project-image-container {
+            transform: scale(1.05) rotate(3deg);
           }
-          
-          /* Traffic lights */
-          .traffic-lights {
-            display: flex;
-            gap: 8px;
-          }
-          
-          .traffic-light {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2);
-          }
-          
-          .traffic-light.red {
-            background: #ff5f56;
-          }
-          
-          .traffic-light.yellow {
-            background: #ffbd2e;
-          }
-          
-          .traffic-light.green {
-            background: #27c93f;
-          }
-          
-          /* Browser content area */
-          .browser-content {
-            flex: 1;
-            background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-          }
-          
-          .browser-content.dark {
-            background: linear-gradient(135deg, #222 0%, #1a1a1a 100%);
-          }
-          
-          .browser-preview {
-            font-size: 3.5rem;
-            opacity: 0.9;
-            transition: all 0.3s ease;
-          }
-          
-          .project-card:hover .browser-preview {
-            transform: scale(1.05);
-            opacity: 1;
+
+          @media (max-width: 768px) {
+            .project-card {
+              min-height: 400px;
+            }
+            .project-image-container {
+              width: 100% !important;
+              height: 200px;
+            }
           }
         `}</style>
 
         {/* Projects List */}
-        <div className="space-y-12">
+        <div className="space-y-12 px-4">
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className={`project-card ${isDark ? 'dark' : ''}`}
-              data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
+              className="project-card"
+              data-aos="fade-up"
               data-aos-duration="700"
             >
-              {/* Project Content Grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
-                {idx % 2 === 0 ? (
-                  <>
-                    {/* Left: Text Content */}
-                    <div className="p-8 lg:p-10 flex flex-col justify-center">
-                      <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-3">
-                        {project.title}
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-300 text-base lg:text-lg mb-6 leading-relaxed">
-                        {project.description}
-                      </p>
+              {/* Horizontal Layout: Text Left, Image at Corner */}
+              <div className="project-card-grid relative w-full">
+                {/* Left: Text Content */}
+                <div className="project-text-content w-full lg:w-1/2 flex flex-col justify-center">
+                  <h3 className={`text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                    {project.title}
+                  </h3>
+                  <p className={`text-sm sm:text-base lg:text-lg mb-6 leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+                    {project.description}
+                  </p>
 
-                      {/* Technology Tags */}
-                      <div className="flex flex-wrap gap-2 mb-8">
-                        {project.technologies.map((tech, i) => (
-                          <span
-                            key={i}
-                            className="inline-block px-3 py-1 text-xs font-medium text-blue-600 dark:text-blue-300 bg-blue-100 dark:bg-blue-900/40 rounded-full border border-blue-200 dark:border-blue-700"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
+                  {/* Technology Tags */}
+                  <div className="flex flex-wrap gap-2 mb-6 justify-start lg:justify-start even:lg:justify-end">
+                    {project.technologies.slice(0, 6).map((tech, i) => (
+                      <span
+                        key={i}
+                        className={`inline-block px-3 py-1 text-xs sm:text-sm font-medium rounded-full border transition-colors ${
+                          isDark 
+                            ? 'text-blue-300 bg-blue-900/40 border-blue-700 hover:bg-blue-800/60'
+                            : 'text-blue-700 bg-blue-100 border-blue-300 hover:bg-blue-200'
+                        }`}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                    {project.technologies.length > 6 && (
+                      <span className={`inline-block px-3 py-1 text-xs sm:text-sm font-medium ${isDark ? 'text-gray-500' : 'text-gray-600'}`}>
+                        +{project.technologies.length - 6} more
+                      </span>
+                    )}
+                  </div>
 
-                      {/* Links */}
-                      <div className="flex gap-4 flex-wrap">
-                        {project.links.github && (
-                          <a
-                            href={project.links.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-5 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-500 rounded-lg transition-colors duration-300"
-                          >
-                            <Github size={16} />
-                            GitHub
-                          </a>
-                        )}
-                        {project.links.live && (
-                          <a
-                            href={project.links.live}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-5 py-2 text-sm font-medium text-blue-600 dark:text-blue-300 border border-blue-600 dark:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors duration-300"
-                          >
-                            <ExternalLink size={16} />
-                            View Project
-                          </a>
-                        )}
-                      </div>
+                  {/* Links */}
+                  <div className="flex gap-3 justify-start lg:justify-start even:lg:justify-end">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`inline-flex items-center gap-2 px-4 sm:px-5 py-2 text-xs sm:text-sm font-medium rounded-lg transition-colors duration-300 ${
+                        isDark
+                          ? 'text-white bg-blue-600 hover:bg-blue-700'
+                          : 'text-white bg-blue-500 hover:bg-blue-600'
+                      }`}
+                    >
+                      <Github size={16} />
+                      GitHub
+                    </a>
+                  </div>
+                </div>
+
+                {/* Image Container - Positioned at Corner */}
+                <div className="project-image-container w-2/5 h-48 sm:h-56 lg:h-64">
+                  {project.image.match(/[📱🏕️🌾🤖🎓💼]/) ? (
+                    <div className="w-full h-full flex items-center justify-center text-6xl sm:text-8xl">
+                      {project.image}
                     </div>
-
-                    {/* Right: Browser Preview */}
-                    <div className="p-6 lg:p-8 bg-gray-50 dark:bg-gray-800/50 border-l border-gray-200 dark:border-gray-700">
-                      <div className={`browser-frame ${isDark ? 'dark' : ''}`} style={{ minHeight: '320px' }}>
-                        <div className={`browser-header ${isDark ? 'dark' : ''}`}>
-                          <div className="traffic-lights">
-                            <div className="traffic-light red"></div>
-                            <div className="traffic-light yellow"></div>
-                            <div className="traffic-light green"></div>
-                          </div>
-                          <span className="text-xs text-gray-500 dark:text-gray-400 ml-2">
-                            {project.links.live || 'example.com'}
-                          </span>
-                        </div>
-                        <div className={`browser-content ${isDark ? 'dark' : ''}`}>
-                          <div className="browser-preview">{project.image}</div>
-                        </div>
-                      </div>
+                  ) : (
+                    <div className="project-image-wrapper h-full">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="project-image"
+                      />
                     </div>
-                  </>
-                ) : (
-                  <>
-                    {/* Left: Browser Preview */}
-                    <div className="p-6 lg:p-8 bg-gray-50 dark:bg-gray-800/50 border-r border-gray-200 dark:border-gray-700">
-                      <div className={`browser-frame ${isDark ? 'dark' : ''}`} style={{ minHeight: '320px' }}>
-                        <div className={`browser-header ${isDark ? 'dark' : ''}`}>
-                          <div className="traffic-lights">
-                            <div className="traffic-light red"></div>
-                            <div className="traffic-light yellow"></div>
-                            <div className="traffic-light green"></div>
-                          </div>
-                          <span className="text-xs text-gray-500 dark:text-gray-400 ml-2">
-                            {project.links.live || 'example.com'}
-                          </span>
-                        </div>
-                        <div className={`browser-content ${isDark ? 'dark' : ''}`}>
-                          <div className="browser-preview">{project.image}</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Right: Text Content */}
-                    <div className="p-8 lg:p-10 flex flex-col justify-center">
-                      <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-3">
-                        {project.title}
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-300 text-base lg:text-lg mb-6 leading-relaxed">
-                        {project.description}
-                      </p>
-
-                      {/* Technology Tags */}
-                      <div className="flex flex-wrap gap-2 mb-8">
-                        {project.technologies.map((tech, i) => (
-                          <span
-                            key={i}
-                            className="inline-block px-3 py-1 text-xs font-medium text-blue-600 dark:text-blue-300 bg-blue-100 dark:bg-blue-900/40 rounded-full border border-blue-200 dark:border-blue-700"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-
-                      {/* Links */}
-                      <div className="flex gap-4 flex-wrap">
-                        {project.links.github && (
-                          <a
-                            href={project.links.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-5 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-500 rounded-lg transition-colors duration-300"
-                          >
-                            <Github size={16} />
-                            GitHub
-                          </a>
-                        )}
-                        {project.links.live && (
-                          <a
-                            href={project.links.live}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-5 py-2 text-sm font-medium text-blue-600 dark:text-blue-300 border border-blue-600 dark:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors duration-300"
-                          >
-                            <ExternalLink size={16} />
-                            View Project
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  </>
-                )}
+                  )}
+                </div>
               </div>
             </div>
           ))}
