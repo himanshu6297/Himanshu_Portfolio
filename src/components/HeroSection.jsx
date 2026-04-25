@@ -67,7 +67,7 @@ export default function HeroSection() {
               <Linkedin size={24} />
             </a>
             <a
-              href="mailto:your.email@example.com"
+              href="mailto:himanshupatel4679@gmail.com"
               className="text-gray-700 hover:text-primary-600 transition-colors"
             >
               <Mail size={24} />
