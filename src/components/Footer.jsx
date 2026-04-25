@@ -10,7 +10,7 @@ export default function Footer() {
           {/* About Column */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img src="/icon.png" alt="Himanshu Patel" className="w-8 h-8 rounded-lg object-cover" />
+              <img src="/images/icon.png" alt="Himanshu Patel" className="w-8 h-8 rounded-lg object-cover" />
               <h3 className="text-lg font-bold text-white">Himanshu Patel</h3>
             </div>
             <p className="text-gray-400 leading-relaxed">

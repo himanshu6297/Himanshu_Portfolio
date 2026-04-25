@@ -56,7 +56,7 @@ export default function Navbar({ isDark, setIsDark }) {
               duration={500}
               className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
             >
-              <img src="/icon.png" alt="Himanshu Patel" className="w-8 h-8 rounded-lg object-cover" />
+              <img src="/images/icon.png" alt="Himanshu Patel" className="w-8 h-8 rounded-lg object-cover" />
               <span className="text-xl font-bold text-gray-800 dark:text-white">Himanshu Patel</span>
             </ScrollLink>
 
