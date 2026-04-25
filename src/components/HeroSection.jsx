@@ -40,7 +40,7 @@ export default function HeroSection() {
               View My Work <ArrowRight size={20} />
             </ScrollLink>
             <a
-              href="/Himanshu_Portfolio/resume.pdf"
+              href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary inline-flex items-center justify-center gap-2"

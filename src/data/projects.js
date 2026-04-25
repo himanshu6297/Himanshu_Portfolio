@@ -72,7 +72,7 @@ Technical Implementation:
       'Built comprehensive model evaluation framework with precision, recall, F1-score'
     ],
     link: 'https://github.com/himanshu6297/PlantDiseaseDetection/tree/main',
-    image: '/Himanshu_Portfolio/images/Home%20Page.jpg',
+    image: '/images/Home%20Page.jpg',
     duration: 'Jan 2026 - Apr 2026 (Current Capstone Project)',
     status: 'In Progress'
   },
@@ -138,7 +138,7 @@ The CI/CD pipeline automates code quality checks, security scans, Docker image b
       'Enabled zero-downtime deployments with rolling updates on Kubernetes'
     ],
     link: 'https://github.com/himanshu6297/YelpCamp',
-    image: '/Himanshu_Portfolio/images/Yelp-camp-home.jpg',
+    image: '/images/Yelp-camp-home.jpg',
     duration: 'Jan 2025 - Apr 2025 (Capstone Project)',
   },
   {
@@ -202,7 +202,7 @@ Skills Developed:
       'Learned Android Activity lifecycle and proper state restoration'
     ],
     link: 'https://github.com/himanshu6297/Android-Mobile-Application',
-    image: '/Himanshu_Portfolio/images/Android-app.png',
+    image: '/images/Android-app.png',
     company: 'PraxWare Technologies, Ahmedabad',
     internshipDates: 'June 20, 2022 – July 8, 2022',
   }

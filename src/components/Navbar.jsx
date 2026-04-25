@@ -56,7 +56,7 @@ export default function Navbar({ isDark, setIsDark }) {
               duration={500}
               className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
             >
-              <img src="/Himanshu_Portfolio/icon.png" alt="Himanshu Patel" className="w-8 h-8 rounded-lg object-cover" />
+              <img src="/icon.png" alt="Himanshu Patel" className="w-8 h-8 rounded-lg object-cover" />
               <span className="text-xl font-bold text-gray-800 dark:text-white">Himanshu Patel</span>
             </ScrollLink>
 
@@ -79,7 +79,7 @@ export default function Navbar({ isDark, setIsDark }) {
             <div className="hidden md:flex items-center gap-4">
               <DarkModeToggle isDark={isDark} setIsDark={setIsDark} />
               <a
-                href="/Himanshu_Portfolio/resume.pdf"
+                href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary text-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary-400/50"
