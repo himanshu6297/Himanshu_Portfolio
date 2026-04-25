@@ -23,20 +23,20 @@ export default function AboutSection() {
   return (
     <section id="about" className="section bg-white dark:bg-gray-900 transition-colors duration-300">
       <div className="section-container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left Content */}
           <div className="animate-fade-in">
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">About Me</h2>
-            <p className="text-xl text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">About Me</h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
               I'm a full-stack developer focused on building intelligent, real-world applications by combining software development, cloud technologies, and artificial intelligence. I specialize in developing scalable systems across frontend, backend, and cloud environments.
             </p>
-            <p className="text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
              I have hands-on experience with React.js, Node.js, Docker, Kubernetes, and AWS, and I enjoy building production-ready applications with clean architecture and efficient deployment workflows. Recently, I developed an AI-powered plant disease detection system with an integrated chatbot, handling everything from model integration to full-stack deployment.
             </p>
-            <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
               I'm particularly interested in AI-driven solutions and system design, and I continuously work on improving my skills in cloud computing, DevOps, and modern application architecture.
             </p>
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6">
               <AnimatedCounter end={1} label="Years Experience" />
               <AnimatedCounter end={3} label="Major Projects" />
               <AnimatedCounter end={20} label="Technologies" />

@@ -4,17 +4,17 @@ export default function SkillsSection() {
   return (
     <section id="skills" className="section bg-white dark:bg-gray-900 transition-colors duration-300">
       <div className="section-container">
-        <div className="mb-16 text-center animate-fade-in">
-          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">Skills & Technologies</h2>
-          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+        <div className="mb-12 sm:mb-16 text-center animate-fade-in">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">Skills & Technologies</h2>
+          <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto px-2 sm:px-0">
             Full-stack & AI engineer building real-world, scalable intelligent systems
           </p>
-          <p className="text-lg text-blue-600 dark:text-blue-400 mt-6 font-medium">
+          <p className="text-base sm:text-lg text-blue-600 dark:text-blue-400 mt-4 sm:mt-6 font-medium px-2 sm:px-0">
             🚀 Built and deployed an AI-powered crop disease detection system with real-time chatbot integration
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {skillCategories.map((category, idx) => (
             <div
               key={category.category}

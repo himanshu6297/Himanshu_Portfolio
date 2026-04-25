@@ -82,7 +82,7 @@ export default function Navbar({ isDark, setIsDark }) {
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary text-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary-400/50"
+                className="block btn-primary text-center text-xs sm:text-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary-400/50 w-full"
               >
                 Download Resume
               </a>
@@ -109,7 +109,7 @@ export default function Navbar({ isDark, setIsDark }) {
                   to={item.to}
                   smooth={true}
                   duration={500}
-                  className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-gray-700 rounded-lg cursor-pointer transition-all duration-300 hover:translate-x-1"
+                  className="block px-4 py-3 text-sm sm:text-base text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-gray-700 rounded-lg cursor-pointer transition-all duration-300 hover:translate-x-1"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}

@@ -78,11 +78,11 @@ export default function ProfessionalExperienceSection() {
     <section id="experience" className="section bg-white dark:bg-gray-900 py-32 transition-colors duration-300">
       <div className="section-container max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-24" data-aos="fade-up">
-          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
+        <div className="text-center mb-16 sm:mb-20 md:mb-24 px-2 sm:px-0" data-aos="fade-up">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
             Experience
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-xl">
+          <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg md:text-xl">
             My professional journey and key milestones
           </p>
         </div>
@@ -130,7 +130,7 @@ export default function ProfessionalExperienceSection() {
           <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px transform -translate-x-1/2 z-0 bg-gray-300 dark:bg-gray-700"></div>
 
           {/* Timeline Items - Perfect Alignment */}
-          <div className="space-y-24">
+          <div className="space-y-16 sm:space-y-20 md:space-y-24">
             {experiences.map((exp, idx) => (
               <div 
                 key={idx}

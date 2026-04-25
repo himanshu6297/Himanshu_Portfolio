@@ -55,14 +55,14 @@ export default function ContactSection() {
   return (
     <section id="contact" className="section bg-gradient-to-br from-gray-900 to-gray-800 text-white">
       <div className="section-container">
-        <div className="mb-16 text-center animate-fade-in">
-          <h2 className="text-5xl md:text-6xl font-bold mb-4">Let's Connect</h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+        <div className="mb-12 sm:mb-16 text-center animate-fade-in">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">Let's Connect</h2>
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-2 sm:px-0">
             Have a question or want to collaborate? I'd love to hear from you. Get in touch and let's create something amazing!
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
           {/* Contact Info */}
           <div className="space-y-8 animate-slide-up" data-aos="fade-left">
             <h3 className="text-3xl font-bold mb-8">Get in Touch</h3>

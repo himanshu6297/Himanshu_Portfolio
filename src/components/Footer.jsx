@@ -5,8 +5,8 @@ export default function Footer() {
 
   return (
     <footer className="bg-gray-900 dark:bg-black text-gray-300 section transition-colors duration-300">
-      <div className="section-container">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+      <div className="section-container max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 mb-12">
           {/* About Column */}
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -20,7 +20,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-bold text-white mb-4">Get in Touch</h3>
+            <h3 className="text-base sm:text-lg font-bold text-white mb-4">Get in Touch</h3>
             <div className="space-y-3">
               <a href="mailto:himanshupatel4679@gmail.com" className="flex items-center gap-3 hover:text-primary-400 transition-colors">
                 <Mail size={20} /> himanshupatel4679@gmail.com
@@ -33,7 +33,7 @@ export default function Footer() {
 
           {/* Social Links */}
           <div>
-            <h3 className="text-lg font-bold text-white mb-4">Follow Me</h3>
+            <h3 className="text-base sm:text-lg font-bold text-white mb-4">Follow Me</h3>
             <div className="flex gap-4">
               <a
                 href="https://github.com/himanshu6297"

@@ -20,17 +20,17 @@ export default function HeroSection() {
             <span className="text-primary-600 dark:text-primary-300 font-semibold text-sm">Welcome to my portfolio</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight animate-slide-up">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight animate-slide-up">
             Full Stack Developer & Cloud Architect
           </h1>
 
-          <p className="text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed animate-slide-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed animate-slide-up" style={{ animationDelay: '0.2s' }}>
             I design and build scalable, cloud-native applications using modern technologies. 
             From containerized microservices to mobile solutions, I bring ideas to life with code, 
             infrastructure, and DevOps best practices.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-slide-up" style={{ animationDelay: '0.4s' }}>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12 animate-slide-up" style={{ animationDelay: '0.4s' }}>
             <ScrollLink
               to="projects"
               smooth={true}

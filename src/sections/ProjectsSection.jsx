@@ -17,11 +17,11 @@ export default function ProjectsSection({ isDark }) {
       {/* ALL CONTENT MUST BE INSIDE THIS */}
       <div className="relative z-10 section-container max-w-6xl">
         {/* Header */}
-        <div className="text-center mb-16 md:mb-24 px-4" data-aos="fade-up">
-          <h2 className={`text-4xl sm:text-5xl md:text-6xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+        <div className="text-center mb-12 sm:mb-16 md:mb-24 px-2 sm:px-4" data-aos="fade-up">
+          <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
             Projects
           </h2>
-          <p className={`text-lg md:text-xl ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+          <p className={`text-base sm:text-lg md:text-xl ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
             Featured projects and applications I've built
           </p>
         </div>
