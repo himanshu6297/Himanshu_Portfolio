@@ -20,7 +20,7 @@ export default function ContactSection() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Create mailto link
-    const mailto = `mailto:your.email@example.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`;
+    const mailto = `mailto:himanshupatel4679@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`;
     window.location.href = mailto;
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
@@ -94,7 +94,7 @@ export default function ContactSection() {
                 {[
                   { icon: Github, link: 'https://github.com' },
                   { icon: Linkedin, link: 'https://linkedin.com' },
-                  { icon: Mail, link: 'mailto:your.email@example.com' }
+                  { icon: Mail, link: 'mailto:himanshupatel4679@gmail.com' }
                 ].map((social, idx) => {
                   const Icon = social.icon;
                   return (
