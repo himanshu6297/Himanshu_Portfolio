@@ -82,12 +82,19 @@ export default function ExperienceSection() {
           .dark .card-arrow-left::before {
             border-right-color: rgb(31 41 55);
           }
+
+          /* Timeline line - mobile specific */
+          @media (max-width: 1023px) {
+            .timeline-line {
+              left: calc(50% - 1px) !important;
+            }
+          }
         `}</style>
 
         {/* Timeline Container */}
         <div className="relative mx-auto">
           {/* Vertical Timeline Line - Visible on all screens */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-px transform -translate-x-1/2 z-0 bg-gray-300 dark:bg-gray-700"></div>
+          <div className="timeline-line absolute top-0 bottom-0 w-px transform -translate-x-1/2 z-0 bg-gray-300 dark:bg-gray-700" style={{left: '50%'}}></div>
 
           {/* Timeline Items */}
           <div className="space-y-24">
@@ -180,17 +187,17 @@ export default function ExperienceSection() {
                 </div>
 
                 {/* Tablet/Mobile Layout */}
-                <div className="lg:hidden">
-                  <div className="relative max-w-2xl mx-auto px-4">
-                    {/* Timeline node */}
-                    <div className="flex items-center justify-center mb-6">
-                      <div className="w-16 h-16 rounded-full bg-white dark:bg-gray-900 border-4 border-blue-400 dark:border-blue-300 shadow-md flex items-center justify-center relative z-10">
+                <div className="lg:hidden relative">
+                  <div className="flex flex-col items-center">
+                    {/* Timeline node - centered */}
+                    <div className="flex items-center justify-center mb-6 relative z-10">
+                      <div className="w-16 h-16 rounded-full bg-white dark:bg-gray-900 border-4 border-blue-400 dark:border-blue-300 shadow-md flex items-center justify-center">
                         <span className="text-3xl">{exp.icon}</span>
                       </div>
                     </div>
                     
                     {/* Card - alternates left/right */}
-                    <div className={`flex ${idx % 2 === 0 ? 'justify-end pr-4' : 'justify-start pl-4'} mb-8`}>
+                    <div className={`flex w-full px-4 mb-8 ${idx % 2 === 0 ? 'justify-end' : 'justify-start'}`}>
                       <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600 p-5 w-full max-w-xs hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-md transition-all duration-300">
                         <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                           {exp.title}
