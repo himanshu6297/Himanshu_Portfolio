@@ -36,7 +36,10 @@ export default function ProjectsSection({ isDark }) {
             box-shadow: none;
             transition: all 0.3s ease;
             position: relative;
-            min-height: 300px;
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
           }
 
           .project-card:hover {
@@ -47,62 +50,93 @@ export default function ProjectsSection({ isDark }) {
           .project-card-grid {
             position: relative;
             padding-right: 0;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
           }
 
           .project-text-content {
             position: relative;
             z-index: 10;
+            flex: 1;
+            min-width: 0;
           }
 
-          /* Odd cards (1st, 3rd, 5th...) - text left, half width */
-          .project-card:nth-child(odd) .project-text-content {
-            width: 100%;
-            margin-left: 0;
-            padding-right: 0;
-          }
-
-          /* Even cards (2nd, 4th, 6th...) - text right, half width */
-          .project-card:nth-child(even) .project-text-content {
-            width: 100%;
-            margin-left: auto;
-            text-align: right;
-            padding-left: 0;
-          }
-
-          @media (min-width: 1024px) {
-            .project-card:nth-child(odd) .project-text-content {
-              width: 50%;
+          /* Mobile: Stack vertically */
+          @media (max-width: 1023px) {
+            .project-card {
+              flex-direction: column;
             }
+
+            .project-card-grid {
+              flex-direction: column;
+            }
+
+            .project-card:nth-child(odd) .project-text-content {
+              width: 100%;
+              margin-left: 0;
+              padding-right: 0;
+              text-align: left;
+            }
+
             .project-card:nth-child(even) .project-text-content {
-              width: 50%;
+              width: 100%;
+              margin-left: 0;
+              text-align: left;
+              padding-left: 0;
+            }
+          }
+
+          /* Desktop: Alternating layout */
+          @media (min-width: 1024px) {
+            .project-card-grid {
+              position: relative;
+              height: 350px;
+            }
+
+            .project-card:nth-child(odd) .project-text-content {
+              width: 55%;
+              text-align: left;
+            }
+
+            .project-card:nth-child(even) .project-text-content {
+              width: 55%;
+              order: 2;
+              text-align: right;
+            }
+
+            .project-card:nth-child(even) .project-image-container {
+              order: 1;
             }
           }
 
           .project-image-container {
-            position: absolute;
+            position: relative;
             overflow: hidden;
             transition: transform 0.5s ease, filter 0.5s ease;
             transform: scale(1) rotate(0deg);
             filter: brightness(1);
-            bottom: 0;
+            flex-shrink: 0;
           }
 
-          /* Even cards (1st, 3rd, 5th...) - bottom right */
-          .project-card:nth-child(odd) .project-image-container {
-            right: 0;
+          @media (max-width: 1023px) {
+            .project-image-container {
+              width: 100%;
+              height: 250px;
+            }
           }
 
-          /* Odd cards (2nd, 4th, 6th...) - bottom left */
-          .project-card:nth-child(even) .project-image-container {
-            left: 0;
+          @media (min-width: 1024px) {
+            .project-image-container {
+              width: 40%;
+              height: 100%;
+            }
           }
 
           .project-image-wrapper {
             width: 100%;
             height: 100%;
-            border-radius: 0;
-            border: none;
-            box-shadow: none;
+            border-radius: 12px;
             overflow: hidden;
           }
 
@@ -118,19 +152,8 @@ export default function ProjectsSection({ isDark }) {
             filter: brightness(1.1);
           }
 
-          /* Even cards (YelpCamp) - tilt right on hover */
           .project-card:nth-child(even):hover .project-image-container {
             transform: scale(1.05) rotate(3deg);
-          }
-
-          @media (max-width: 768px) {
-            .project-card {
-              min-height: 400px;
-            }
-            .project-image-container {
-              width: 100% !important;
-              height: 200px;
-            }
           }
         `}</style>
 
@@ -194,7 +217,7 @@ export default function ProjectsSection({ isDark }) {
                 </div>
 
                 {/* Image Container - Positioned at Corner */}
-                <div className="project-image-container w-2/5 h-48 sm:h-56 lg:h-64">
+                <div className="project-image-container">
                   {project.image.match(/[📱🏕️🌾🤖🎓💼]/) ? (
                     <div className="w-full h-full flex items-center justify-center text-6xl sm:text-8xl">
                       {project.image}
