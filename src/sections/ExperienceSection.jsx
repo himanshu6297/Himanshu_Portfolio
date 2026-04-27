@@ -86,8 +86,8 @@ export default function ExperienceSection() {
 
         {/* Timeline Container */}
         <div className="relative mx-auto">
-          {/* Vertical Timeline Line - Thin and Subtle */}
-          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px transform -translate-x-1/2 z-0 bg-gray-300 dark:bg-gray-700"></div>
+          {/* Vertical Timeline Line - Visible on all screens */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-px transform -translate-x-1/2 z-0 bg-gray-300 dark:bg-gray-700"></div>
 
           {/* Timeline Items */}
           <div className="space-y-24">
@@ -181,30 +181,35 @@ export default function ExperienceSection() {
 
                 {/* Tablet/Mobile Layout */}
                 <div className="lg:hidden">
-                  <div className="flex flex-col items-center gap-6">
-                    {/* Node */}
-                    <div className="w-20 h-20 rounded-full bg-white dark:bg-gray-900 border-4 border-blue-400 dark:border-blue-300 shadow-md flex items-center justify-center">
-                      <span className="text-4xl">{exp.icon}</span>
+                  <div className="relative max-w-2xl mx-auto px-4">
+                    {/* Timeline node */}
+                    <div className="flex items-center justify-center mb-6">
+                      <div className="w-16 h-16 rounded-full bg-white dark:bg-gray-900 border-4 border-blue-400 dark:border-blue-300 shadow-md flex items-center justify-center relative z-10">
+                        <span className="text-3xl">{exp.icon}</span>
+                      </div>
                     </div>
-                    {/* Card */}
-                    <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600 p-6 w-full max-w-sm hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-md transition-all duration-300">
-                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                        {exp.title}
-                      </h3>
-                      <p className="text-base text-gray-600 dark:text-gray-300 font-medium mb-3">
-                        {exp.subtitle}
-                      </p>
-                      <p className="text-sm text-gray-700 dark:text-gray-400 leading-relaxed mb-4">
-                        {exp.description}
-                      </p>
-                      <div className="flex items-center gap-4">
-                        <div className="flex items-center gap-1 text-xs text-gray-600 dark:text-gray-400">
-                          <Calendar size={14} />
-                          {exp.date}
-                        </div>
-                        <div className="flex items-center gap-1 text-xs text-gray-600 dark:text-gray-400">
-                          <MapPin size={14} />
-                          {exp.location}
+                    
+                    {/* Card - alternates left/right */}
+                    <div className={`flex ${idx % 2 === 0 ? 'justify-end pr-4' : 'justify-start pl-4'} mb-8`}>
+                      <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600 p-5 w-full max-w-xs hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-md transition-all duration-300">
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                          {exp.title}
+                        </h3>
+                        <p className="text-sm text-gray-600 dark:text-gray-300 font-medium mb-2">
+                          {exp.subtitle}
+                        </p>
+                        <p className="text-xs text-gray-700 dark:text-gray-400 leading-relaxed mb-3">
+                          {exp.description}
+                        </p>
+                        <div className="flex flex-col gap-2">
+                          <div className="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400">
+                            <Calendar size={14} />
+                            {exp.date}
+                          </div>
+                          <div className="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400">
+                            <MapPin size={14} />
+                            {exp.location}
+                          </div>
                         </div>
                       </div>
                     </div>

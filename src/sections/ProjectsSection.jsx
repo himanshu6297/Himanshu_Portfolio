@@ -179,7 +179,7 @@ export default function ProjectsSection({ isDark }) {
 
                   {/* Technology Tags */}
                   <div className="flex flex-wrap gap-2 mb-6 justify-start lg:justify-start even:lg:justify-end">
-                    {project.technologies.slice(0, 6).map((tech, i) => (
+                    {project.technologies.map((tech, i) => (
                       <span
                         key={i}
                         className={`inline-block px-3 py-1 text-xs sm:text-sm font-medium rounded-full border transition-colors ${
@@ -191,11 +191,6 @@ export default function ProjectsSection({ isDark }) {
                         {tech}
                       </span>
                     ))}
-                    {project.technologies.length > 6 && (
-                      <span className={`inline-block px-3 py-1 text-xs sm:text-sm font-medium ${isDark ? 'text-gray-500' : 'text-gray-600'}`}>
-                        +{project.technologies.length - 6} more
-                      </span>
-                    )}
                   </div>
 
                   {/* Links */}
