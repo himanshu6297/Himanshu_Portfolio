@@ -83,38 +83,41 @@ export default function ExperienceSection() {
             border-right-color: rgb(31 41 55);
           }
 
-          /* Timeline line positioning */
+          /* Timeline line positioning - visible on all screens */
           .timeline-line {
             position: absolute !important;
             left: 50% !important;
             transform: translateX(-50%) !important;
-            width: 2px !important;
+            width: 3px !important;
             top: 0 !important;
             bottom: 0 !important;
-            z-index: 0 !important;
+            z-index: 1 !important;
+            pointer-events: none;
           }
 
           @media (max-width: 1023px) {
             .timeline-line {
               left: 50% !important;
-              width: 2px !important;
+              width: 3px !important;
+              z-index: 1 !important;
             }
           }
         `}</style>
 
         {/* Timeline Container with proper relative positioning */}
-        <div className="relative" style={{width: '100%'}}>
+        <div className="relative w-full" style={{position: 'relative'}}>
           {/* Vertical Timeline Line - Full Height */}
           <div 
-            className="timeline-line bg-gray-300 dark:bg-gray-700"
+            className="timeline-line bg-gray-300 dark:bg-gray-600"
             style={{
               position: 'absolute',
               left: '50%',
               transform: 'translateX(-50%)',
-              width: '2px',
-              top: '-50px',
-              bottom: '-50px',
-              zIndex: 0
+              width: '3px',
+              top: 0,
+              bottom: 0,
+              zIndex: 1,
+              pointerEvents: 'none'
             }}
           ></div>
 
@@ -209,17 +212,17 @@ export default function ExperienceSection() {
                 </div>
 
                 {/* Tablet/Mobile Layout */}
-                <div className="lg:hidden relative">
-                  <div className="flex flex-col items-center">
-                    {/* Timeline node - centered */}
-                    <div className="flex items-center justify-center mb-6 relative z-10">
-                      <div className="w-16 h-16 rounded-full bg-white dark:bg-gray-900 border-4 border-blue-400 dark:border-blue-300 shadow-md flex items-center justify-center">
+                <div className="lg:hidden relative z-10">
+                  <div className="flex flex-col items-center relative">
+                    {/* Timeline node - centered and visible */}
+                    <div className="flex items-center justify-center mb-6 relative z-20">
+                      <div className="w-16 h-16 rounded-full bg-white dark:bg-gray-900 border-4 border-blue-400 dark:border-blue-300 shadow-lg flex items-center justify-center">
                         <span className="text-3xl">{exp.icon}</span>
                       </div>
                     </div>
                     
-                    {/* Card - alternates left/right */}
-                    <div className={`flex w-full px-4 mb-8 ${idx % 2 === 0 ? 'justify-end' : 'justify-start'}`}>
+                    {/* Card - alternates left/right with proper z-index */}
+                    <div className={`flex w-full px-4 mb-8 relative z-10 ${idx % 2 === 0 ? 'justify-end' : 'justify-start'}`}>
                       <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600 p-5 w-full max-w-xs hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-md transition-all duration-300">
                         <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                           {exp.title}

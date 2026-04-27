@@ -39,7 +39,7 @@ export default function Footer() {
                 href="https://github.com/himanshu6297"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
+                className="w-12 h-12 sm:w-14 sm:h-14 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-all duration-300 hover:scale-110"
               >
                 <Github size={24} />
               </a>
@@ -47,13 +47,13 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/himanshu-patel-hp"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
+                className="w-12 h-12 sm:w-14 sm:h-14 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-all duration-300 hover:scale-110"
               >
                 <Linkedin size={24} />
               </a>
               <a
                 href="mailto:himanshupatel4679@gmail.com"
-                className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
+                className="w-12 h-12 sm:w-14 sm:h-14 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-all duration-300 hover:scale-110"
               >
                 <Mail size={24} />
               </a>
