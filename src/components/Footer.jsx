@@ -23,10 +23,12 @@ export default function Footer() {
             <h3 className="text-base sm:text-lg font-bold text-white mb-4">Get in Touch</h3>
             <div className="space-y-3">
               <a href="mailto:himanshupatel4679@gmail.com" className="flex items-center gap-3 hover:text-primary-400 transition-colors">
-                <Mail size={20} /> himanshupatel4679@gmail.com
+                <Mail size={28} className="text-white flex-shrink-0" /> 
+                <span className="break-all">himanshupatel4679@gmail.com</span>
               </a>
               <div className="flex items-center gap-3 text-gray-400">
-                <MapPin size={20} /> Saskatoon, Canada
+                <MapPin size={28} className="text-gray-400 flex-shrink-0" /> 
+                <span>Saskatoon, Canada</span>
               </div>
             </div>
           </div>

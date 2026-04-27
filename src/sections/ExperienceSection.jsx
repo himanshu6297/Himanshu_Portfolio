@@ -47,72 +47,57 @@ export default function ExperienceSection() {
           </p>
         </div>
 
-        {/* CSS for pointer arrows and timeline */}
+        {/* CSS Animations for Timeline */}
          <style>{`
-          .card-arrow-right::after {
-            content: '';
-            position: absolute;
-            right: -8px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 0;
-            height: 0;
-            border-left: 8px solid rgb(31 41 55);
-            border-top: 8px solid transparent;
-            border-bottom: 8px solid transparent;
+          @keyframes glow-pulse {
+            0%, 100% { box-shadow: 0 0 10px rgba(59, 130, 246, 0.3), 0 0 20px rgba(59, 130, 246, 0.1); }
+            50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.6), 0 0 30px rgba(59, 130, 246, 0.3); }
           }
 
-          .card-arrow-left::before {
-            content: '';
-            position: absolute;
-            left: -8px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 0;
-            height: 0;
-            border-right: 8px solid rgb(31 41 55);
-            border-top: 8px solid transparent;
-            border-bottom: 8px solid transparent;
+          @keyframes line-draw {
+            from { 
+              background: linear-gradient(180deg, transparent 0%, transparent 100%);
+            }
+            to { 
+              background: linear-gradient(180deg, #3b82f6 0%, #06b6d4 100%);
+            }
           }
 
-          .dark .card-arrow-right::after {
-            border-left-color: rgb(31 41 55);
+          .timeline-line-animated {
+            animation: line-draw 2s ease-out forwards;
           }
 
-          .dark .card-arrow-left::before {
-            border-right-color: rgb(31 41 55);
+          .timeline-node-pulse {
+            animation: glow-pulse 2s ease-in-out infinite;
           }
 
-          /* Timeline line positioning - visible on all screens */
-          .timeline-line {
-            position: absolute !important;
-            left: 50% !important;
-            transform: translateX(-50%) !important;
-            width: 3px !important;
-            top: 0 !important;
-            bottom: 0 !important;
-            z-index: 1 !important;
-            pointer-events: none;
+          .timeline-connector-dot {
+            animation: glow-pulse 1.5s ease-in-out infinite;
+            transition: all 0.3s ease;
           }
 
           @media (max-width: 1023px) {
-            .timeline-line {
-              left: 50% !important;
-              width: 3px !important;
-              z-index: 1 !important;
+            .timeline-line-animated {
+              animation: line-draw 3s ease-out forwards;
             }
           }
         `}</style>
 
-        {/* Timeline Container with proper relative positioning */}
-        <div className="relative w-full">
-          {/* Vertical Timeline Line - Visible on ALL screens */}
-          <div 
-            className="absolute left-1/2 top-0 bottom-0 w-1 transform -translate-x-1/2 z-0 pointer-events-none bg-gray-300 dark:bg-gray-600"
-            style={{
-              width: '3px'
-            }}
-          ></div>
+        {/* Timeline Container - Full Width */}
+        <div className="relative w-full mx-auto">
+          {/* Animated Timeline Line */}
+          <div className="absolute left-1/2 top-0 bottom-0 transform -translate-x-1/2 z-0 pointer-events-none">
+            {/* Gradient Background for Timeline */}
+            <div 
+              className="timeline-line-animated w-1.5 h-full"
+              style={{
+                width: '3px',
+                background: 'linear-gradient(180deg, #3b82f6 0%, #06b6d4 50%, #8b5cf6 100%)',
+                boxShadow: '0 0 15px rgba(59, 130, 246, 0.4), inset 0 0 8px rgba(255,255,255,0.1)',
+                borderRadius: '2px'
+              }}
+            ></div>
+          </div>
 
           {/* Timeline Items */}
           <div className="space-y-24 relative z-10">
@@ -206,17 +191,38 @@ export default function ExperienceSection() {
 
                 {/* Tablet/Mobile Layout */}
                 <div className="lg:hidden relative z-10">
-                  <div className="flex flex-col items-center relative">
-                    {/* Timeline node - centered and visible */}
-                    <div className="flex items-center justify-center mb-6 relative z-20">
-                      <div className="w-16 h-16 rounded-full bg-white dark:bg-gray-900 border-4 border-blue-400 dark:border-blue-300 shadow-lg flex items-center justify-center">
+                  <div className="flex flex-col items-center">
+                    {/* Animated Timeline Node */}
+                    <div className="flex items-center justify-center mb-8 relative">
+                      {/* Outer Glow Ring */}
+                      <div 
+                        className="timeline-node-pulse absolute rounded-full"
+                        style={{
+                          width: '80px',
+                          height: '80px',
+                          border: '2px solid rgba(59, 130, 246, 0.3)',
+                          left: '50%',
+                          transform: 'translateX(-50%)'
+                        }}
+                      ></div>
+                      
+                      {/* Main Node Circle */}
+                      <div className="w-16 h-16 rounded-full bg-white dark:bg-gray-900 border-4 border-blue-400 dark:border-blue-300 shadow-lg flex items-center justify-center relative z-20"
+                        style={{
+                          boxShadow: '0 0 20px rgba(59, 130, 246, 0.4), 0 8px 16px rgba(0,0,0,0.1)'
+                        }}
+                      >
                         <span className="text-3xl">{exp.icon}</span>
                       </div>
                     </div>
                     
-                    {/* Card - alternates left/right with proper z-index */}
-                    <div className={`flex w-full px-4 mb-8 relative z-10 ${idx % 2 === 0 ? 'justify-end' : 'justify-start'}`}>
-                      <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600 p-5 w-full max-w-xs hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-md transition-all duration-300">
+                    {/* Card - alternates left/right */}
+                    <div className={`flex w-full px-4 mb-12 relative z-10 ${idx % 2 === 0 ? 'justify-end' : 'justify-start'}`}>
+                      <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600 p-5 w-full max-w-xs hover:border-blue-400 dark:hover:border-blue-400 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                        style={{
+                          boxShadow: '0 4px 12px rgba(0,0,0,0.08)'
+                        }}
+                      >
                         <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                           {exp.title}
                         </h3>
