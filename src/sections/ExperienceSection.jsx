@@ -84,20 +84,17 @@ export default function ExperienceSection() {
         `}</style>
 
         {/* Timeline Container - Full Width */}
-        <div className="relative w-full mx-auto">
-          {/* Animated Timeline Line */}
-          <div className="absolute left-1/2 top-0 bottom-0 transform -translate-x-1/2 z-0 pointer-events-none">
-            {/* Gradient Background for Timeline */}
-            <div 
-              className="timeline-line-animated w-1.5 h-full"
-              style={{
-                width: '3px',
-                background: 'linear-gradient(180deg, #3b82f6 0%, #06b6d4 50%, #8b5cf6 100%)',
-                boxShadow: '0 0 15px rgba(59, 130, 246, 0.4), inset 0 0 8px rgba(255,255,255,0.1)',
-                borderRadius: '2px'
-              }}
-            ></div>
-          </div>
+        <div className="relative w-full" style={{ minHeight: '1500px' }}>
+          {/* Animated Timeline Line - Desktop Only */}
+          <div 
+            className="hidden lg:block absolute left-1/2 top-0 bottom-0 transform -translate-x-1/2 z-0 pointer-events-none"
+            style={{
+              width: '3px',
+              background: 'linear-gradient(180deg, #3b82f6 0%, #06b6d4 50%, #8b5cf6 100%)',
+              boxShadow: '0 0 15px rgba(59, 130, 246, 0.5), inset 0 0 8px rgba(255,255,255,0.1)',
+              borderRadius: '2px'
+            }}
+          ></div>
 
           {/* Timeline Items */}
           <div className="space-y-24 relative z-10">
@@ -191,7 +188,14 @@ export default function ExperienceSection() {
 
                 {/* Tablet/Mobile Layout */}
                 <div className="lg:hidden relative z-10">
-                  <div className="flex flex-col items-center">
+                  <div className="flex flex-col items-center relative" style={{
+                    position: 'relative',
+                    paddingLeft: '40px',
+                    borderLeft: '3px solid',
+                    borderImageSource: 'linear-gradient(180deg, #3b82f6 0%, #06b6d4 50%, #8b5cf6 100%)',
+                    borderImageSlice: 1,
+                    boxShadow: 'inset -8px 0 15px rgba(59, 130, 246, 0.2)'
+                  }}>
                     {/* Animated Timeline Node */}
                     <div className="flex items-center justify-center mb-8 relative">
                       {/* Outer Glow Ring */}
