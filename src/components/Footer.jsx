@@ -39,23 +39,26 @@ export default function Footer() {
                 href="https://github.com/himanshu6297"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 sm:w-14 sm:h-14 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-all duration-300 hover:scale-110"
+                className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-all duration-300 hover:scale-125 active:scale-95"
+                title="GitHub"
               >
-                <Github size={24} />
+                <Github size={32} className="text-white" strokeWidth={1.5} />
               </a>
               <a
                 href="https://www.linkedin.com/in/himanshu-patel-hp"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 sm:w-14 sm:h-14 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-all duration-300 hover:scale-110"
+                className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-all duration-300 hover:scale-125 active:scale-95"
+                title="LinkedIn"
               >
-                <Linkedin size={24} />
+                <Linkedin size={32} className="text-white" strokeWidth={1.5} />
               </a>
               <a
                 href="mailto:himanshupatel4679@gmail.com"
-                className="w-12 h-12 sm:w-14 sm:h-14 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-all duration-300 hover:scale-110"
+                className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-all duration-300 hover:scale-125 active:scale-95"
+                title="Email"
               >
-                <Mail size={24} />
+                <Mail size={32} className="text-white" strokeWidth={1.5} />
               </a>
             </div>
           </div>

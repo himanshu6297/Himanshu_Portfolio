@@ -106,19 +106,13 @@ export default function ExperienceSection() {
 
         {/* Timeline Container with proper relative positioning */}
         <div className="relative w-full">
-          {/* Vertical Timeline Line - Using SVG approach for reliability */}
-          <svg 
-            className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 transform -translate-x-1/2 z-0"
+          {/* Vertical Timeline Line - Visible on ALL screens */}
+          <div 
+            className="absolute left-1/2 top-0 bottom-0 w-1 transform -translate-x-1/2 z-0 pointer-events-none bg-gray-300 dark:bg-gray-600"
             style={{
-              width: '3px',
-              height: '100%',
-              minHeight: '1000px'
+              width: '3px'
             }}
-            preserveAspectRatio="none"
-            viewBox="0 0 1 1000"
-          >
-            <line x1="0.5" y1="0" x2="0.5" y2="1000" stroke="currentColor" strokeWidth="3" className="text-gray-300 dark:text-gray-600" />
-          </svg>
+          ></div>
 
           {/* Timeline Items */}
           <div className="space-y-24 relative z-10">
@@ -213,11 +207,6 @@ export default function ExperienceSection() {
                 {/* Tablet/Mobile Layout */}
                 <div className="lg:hidden relative z-10">
                   <div className="flex flex-col items-center relative">
-                    {/* Timeline vertical line for mobile - using border */}
-                    {idx < experiences.length - 1 && (
-                      <div className="absolute left-1/2 top-16 -bottom-8 w-1 transform -translate-x-1/2 bg-gray-300 dark:bg-gray-600 z-0"></div>
-                    )}
-                    
                     {/* Timeline node - centered and visible */}
                     <div className="flex items-center justify-center mb-6 relative z-20">
                       <div className="w-16 h-16 rounded-full bg-white dark:bg-gray-900 border-4 border-blue-400 dark:border-blue-300 shadow-lg flex items-center justify-center">
