@@ -83,18 +83,40 @@ export default function ExperienceSection() {
             border-right-color: rgb(31 41 55);
           }
 
-          /* Timeline line - mobile specific */
+          /* Timeline line positioning */
+          .timeline-line {
+            position: absolute !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            width: 2px !important;
+            top: 0 !important;
+            bottom: 0 !important;
+            z-index: 0 !important;
+          }
+
           @media (max-width: 1023px) {
             .timeline-line {
-              left: calc(50% - 1px) !important;
+              left: 50% !important;
+              width: 2px !important;
             }
           }
         `}</style>
 
-        {/* Timeline Container */}
-        <div className="relative mx-auto">
-          {/* Vertical Timeline Line - Visible on all screens */}
-          <div className="timeline-line absolute top-0 bottom-0 w-px transform -translate-x-1/2 z-0 bg-gray-300 dark:bg-gray-700" style={{left: '50%'}}></div>
+        {/* Timeline Container with proper relative positioning */}
+        <div className="relative" style={{width: '100%'}}>
+          {/* Vertical Timeline Line - Full Height */}
+          <div 
+            className="timeline-line bg-gray-300 dark:bg-gray-700"
+            style={{
+              position: 'absolute',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '2px',
+              top: '-50px',
+              bottom: '-50px',
+              zIndex: 0
+            }}
+          ></div>
 
           {/* Timeline Items */}
           <div className="space-y-24">

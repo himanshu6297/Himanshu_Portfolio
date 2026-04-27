@@ -39,23 +39,23 @@ export default function Footer() {
                 href="https://github.com/himanshu6297"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
+                className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
               >
-                <Github size={20} />
+                <Github size={24} />
               </a>
               <a
                 href="https://www.linkedin.com/in/himanshu-patel-hp"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
+                className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
               >
-                <Linkedin size={20} />
+                <Linkedin size={24} />
               </a>
               <a
                 href="mailto:himanshupatel4679@gmail.com"
-                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
+                className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
               >
-                <Mail size={20} />
+                <Mail size={24} />
               </a>
             </div>
           </div>

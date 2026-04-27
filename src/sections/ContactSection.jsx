@@ -36,13 +36,13 @@ export default function ContactSection() {
       icon: <Linkedin size={24} />,
       label: 'LinkedIn',
       value: 'Connect with me',
-      link: 'https://linkedin.com'
+      link: 'https://www.linkedin.com/in/himanshu-patel-hp'
     },
     {
       icon: <Github size={24} />,
       label: 'GitHub',
       value: 'View repositories',
-      link: 'https://github.com'
+      link: 'https://github.com/himanshu6297'
     },
     {
       icon: <MapPin size={24} />,
@@ -92,8 +92,8 @@ export default function ContactSection() {
               <p className="text-gray-400 mb-4">Follow on social media:</p>
               <div className="flex gap-4">
                 {[
-                  { icon: Github, link: 'https://github.com' },
-                  { icon: Linkedin, link: 'https://linkedin.com' },
+                  { icon: Github, link: 'https://github.com/himanshu6297' },
+                  { icon: Linkedin, link: 'https://www.linkedin.com/in/himanshu-patel-hp' },
                   { icon: Mail, link: 'mailto:himanshupatel4679@gmail.com' }
                 ].map((social, idx) => {
                   const Icon = social.icon;
@@ -103,9 +103,9 @@ export default function ContactSection() {
                       href={social.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-all duration-300 hover:scale-110"
+                      className="w-14 h-14 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-all duration-300 hover:scale-110"
                     >
-                      <Icon size={20} />
+                      <Icon size={24} />
                     </a>
                   );
                 })}

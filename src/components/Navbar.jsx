@@ -117,7 +117,7 @@ export default function Navbar({ isDark, setIsDark }) {
               ))}
               <div className="px-4 pt-2">
                 <a
-                  href="/Himanshu_Portfolio/resume.pdf"
+                  href="/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block btn-primary text-center text-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary-400/50"

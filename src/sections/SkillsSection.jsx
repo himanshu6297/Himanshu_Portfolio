@@ -10,7 +10,7 @@ export default function SkillsSection() {
             Full-stack & AI engineer building real-world, scalable intelligent systems
           </p>
           <p className="text-base sm:text-lg text-blue-600 dark:text-blue-400 mt-4 sm:mt-6 font-medium px-2 sm:px-0">
-            🚀 Built and deployed an AI-powered crop disease detection system with real-time chatbot integration
+            Built and deployed an AI-powered crop disease detection system with real-time chatbot integration
           </p>
         </div>
 
