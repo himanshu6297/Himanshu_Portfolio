@@ -105,8 +105,8 @@ export default function ExperienceSection() {
         `}</style>
 
         {/* Timeline Container with proper relative positioning */}
-        <div className="relative w-full" style={{position: 'relative'}}>
-          {/* Vertical Timeline Line - Full Height */}
+        <div className="relative w-full" style={{position: 'relative', minHeight: '100%'}}>
+          {/* Vertical Timeline Line - Full Height - Mobile Fix */}
           <div 
             className="timeline-line bg-gray-300 dark:bg-gray-600"
             style={{
@@ -114,15 +114,15 @@ export default function ExperienceSection() {
               left: '50%',
               transform: 'translateX(-50%)',
               width: '3px',
-              top: 0,
-              bottom: 0,
+              top: '-100px',
+              bottom: '-100px',
               zIndex: 1,
               pointerEvents: 'none'
             }}
           ></div>
 
           {/* Timeline Items */}
-          <div className="space-y-24">
+          <div className="space-y-24 relative z-10">
             {experiences.map((exp, idx) => (
               <div 
                 key={idx}
